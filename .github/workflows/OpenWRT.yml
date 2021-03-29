@@ -109,7 +109,8 @@ jobs:
         cp bin.tar.gz ./openwrt/bin/targets/x86/64/bin.tar.gz
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        bzip2 *.img
+        # bzip2 *.img
+        CONFIG_VMDK_IMAGES=y
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
